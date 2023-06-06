@@ -27,6 +27,7 @@
 
 package org.lessons.java.shop;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Prodotto {
@@ -76,6 +77,14 @@ public class Prodotto {
     // metodo per avere il nome esteso con codice-nome
     public String nomeEsteso(){
         return this.codice + "-"+ this.nome;
+    }
+
+    @Override
+    public String toString(){
+        DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        return "Riepilogo" + "\n" +  "Nome prodotto: " + nome +  "\n" + "Descrizione: "
+                + descrizione +  "\n" + "Prezzo: " + decimalFormat.format( getPrezzoBase()) + "€" + "\n" + "Iva: " + decimalFormat.format(iva) + "%"+ "\n" +
+                "Prezzo compreso iva: " + decimalFormat.format(getPrezzoIvato(iva)) + "€" +  "\n";
     }
 
 }

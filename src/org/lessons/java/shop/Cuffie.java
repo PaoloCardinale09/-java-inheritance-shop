@@ -11,4 +11,10 @@ public class Cuffie extends Prodotto {
         this.colore = colore;
         this.wireless = wireless;
     }
+
+    @Override
+    public String toString(){
+        return super.toString() + "Colore: " + colore +  "\n" + (wireless? "Cuffie wireless" : "Cuffie cablate");
+    }
+
 }
