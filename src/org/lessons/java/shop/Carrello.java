@@ -36,22 +36,30 @@ public class Carrello {
 
         switch (scelta){
             case "1":
-
                 // Chiedo il colore
                 System.out.println("Colore: ");
                 String colore = scan.nextLine();
 
-
                 // Chiedo se è wireless
-
                 System.out.println("Cuffia wireless? (s/n)");
                 String wirelessScelta = scan.nextLine();
 
                 boolean wireless = wirelessScelta.equalsIgnoreCase("s");
 
                 carrello[i] = new Cuffie(nome, descrizione,prezzo,iva, colore, wireless);
+              break;
 
-                // Con i dati costruisco il prodotto
+            case "2":
+                //Chiedo codice imei
+                System.out.println("Codice imei: ");
+                int imei = Integer.parseInt(scan.nextLine());
+
+                //Chiedo quantità di memoria
+                System.out.println("Quanta memoria: ");
+                int memoria= Integer.parseInt(scan.nextLine());
+
+                carrello[i] = new Smartphone(nome, descrizione,prezzo,iva,imei,memoria);
+                break;
         }
                 System.out.println(Arrays.toString(carrello));
 
