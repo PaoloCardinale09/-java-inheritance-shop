@@ -11,4 +11,9 @@ public class Televisori extends Prodotto{
         this.dimensioni = dimensioni;
         this.smart = smart;
     }
+    @Override
+    public String toString(){
+        return super.toString() + "Dimensioni: " + dimensioni + "pollici" + "\n" + (smart? "Smart TV" : "TV -no smart-")+  "\n";
+    }
+
 }

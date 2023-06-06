@@ -60,10 +60,23 @@ public class Carrello {
 
                 carrello[i] = new Smartphone(nome, descrizione,prezzo,iva,imei,memoria);
                 break;
+            case "3":
+                // Chiedo dimensioni
+                System.out.println("Dimensioni in pollici: ");
+                int dimensioni = Integer.parseInt(scan.nextLine());
+
+                // Chiedo se è una tv smart
+                System.out.println("Smart TV? (s/n)");
+                String smartScelta = scan.nextLine();
+
+                boolean smart = smartScelta.equalsIgnoreCase("s");
+                carrello[i] = new Televisori(nome, descrizione, prezzo, iva, dimensioni,  smart);
+                break;
         }
+        }
+
                 System.out.println(Arrays.toString(carrello));
 
-        }
 
 
 
